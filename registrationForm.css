@@ -1,6 +1,9 @@
 body {
   width: 100%;
   height: 100vh;
+  /* 
+  Relative to 1% of the height of the viewport
+  viewport = the browser window size. If viewport is 50 cm in height, 1vh = 0.5cm*/
   margin: 0;
   background-color: #1b1b32;
   color: #f5f6f7;
@@ -9,12 +12,16 @@ body {
 }
 
 h1, p {
-  margin: 1em auto;
+  margin: 1em auto; 
+  /* em: relative length to the font size of the element (ex. 2em = 2 times the size of current font */
   text-align: center;
 }
 
 form {
   width: 60vw;
+  /* vw relative to 1% of width of the viewport
+  viewport = the browser window size. If viewport is 50 cm, 1vw = 0.5cm.
+  in this case if viewport is 50cm wide, 60vm = 30cm */
   max-width: 500px;
   min-width: 300px;
   margin: 0 auto;
@@ -24,11 +31,14 @@ form {
 fieldset {
   border: none;
   padding: 2rem 0;
+  /* rem: Relative to font-size of the root element
+  rem sets the font-size relative to the browsers base font-size, and will not inherit from its parents. */
   border-bottom: 3px solid #3b3b4f;
 }
 
 fieldset:last-of-type {
   border-bottom: none;
+  /* :last-of-type = pseudo-class representing the last element of type among group of the same sibling elements. In this case because there are multiple border-bottoms written, :last-of-type will only change the last border-bottom */
 }
 
 label {
@@ -54,6 +64,8 @@ input, textarea {
   width: unset;
   margin: 0 0.5em 0 0;
   vertical-align: middle;
+  /* vertical-align: vertically position image, button, etc. with inline, inline block, or table cell box (ie. element boxes, text)
+  https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align*/
 }
 
 input[type="submit"] {
